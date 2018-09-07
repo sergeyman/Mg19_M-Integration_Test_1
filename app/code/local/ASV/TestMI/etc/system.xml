@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<tab_1 translate="label" module="testmi">
+            <label>System Config Tab 1</label>
+            <sort_order>10</sort_order>
+        </tab_1>
+	  </tabs>
+	  <sections>
+		<section_1  translate="label" module="testmi">                    
+		<label>System Config Section 1</label>
+		<tab>tab_1</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>10</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <group_1 translate="label"> 
+					  <label>System Config Group 1</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>10</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <field_1 translate="label">
+                            <label>System Config Field 1</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>System Config Fiesl 1 Comment</comment>
+                          </field_1>
+					   </fields>
+					   </group_1>
+					</groups>
+		</section_1>
+	  </sections>
+</config>

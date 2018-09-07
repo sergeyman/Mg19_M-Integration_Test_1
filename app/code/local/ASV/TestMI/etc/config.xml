@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ASV_TestMI>
+            <version>0.1.0</version>
+        </ASV_TestMI>
+    </modules>
+    <frontend>
+        <routers>
+            <testmi>
+                <use>standard</use>
+                <args>
+                    <module>ASV_TestMI</module>
+                    <frontName>testmi</frontName>
+                </args>
+            </testmi>
+        </routers>
+        <layout>
+            <updates>
+                <testmi>
+                    <file>testmi.xml</file>
+                </testmi>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <testmi>
+                <class>ASV_TestMI_Helper</class>
+            </testmi>
+        </helpers>
+        <blocks>
+            <testmi>
+                <class>ASV_TestMI_Block</class>
+            </testmi>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <testmi>
+                <use>admin</use>
+                <args>
+                    <module>ASV_TestMI</module>
+                    <frontName>admin_testmi</frontName>
+                </args>
+            </testmi>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <testmi module="testmi">
+                <title>TestMI</title>
+                <sort_order>100</sort_order>
+                <children>
+                    <testmibackend module="testmi">
+                        <title>TestMI BackEnd</title>
+                        <sort_order>0</sort_order>
+                        <action>admin_testmi/adminhtml_testmibackend</action>
+                    </testmibackend>
+                </children>
+            </testmi>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <testmi translate="title" module="testmi">
+                            <title>TestMI</title>
+                            <sort_order>1000</sort_order>
+                            <children>
+                                <testmibackend translate="title">
+                                    <title>TestMI BackEnd</title>
+                                </testmibackend>
+                            </children>
+                        </testmi>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <testmi>
+                    <file>testmi.xml</file>
+                </testmi>
+            </updates>
+        </layout>
+    </adminhtml>
+</config> 

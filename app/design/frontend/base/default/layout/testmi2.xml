@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <testmi2_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="testmi2/index" name="testmi2_index" template="testmi2/index.phtml"/>
+        </reference>
+    </testmi2_index_index>
+
+    <testmi2_index_slider1>
+        <reference name="content">
+            <block type="testmi2/index" name="testmi2_slider1" template="testmi2/slider1.phtml"/>
+        </reference>
+    </testmi2_index_slider1>
+    <testmi2_index_slider2>
+        <reference name="content">
+            <block type="testmi2/index" name="testmi2_slider2" template="testmi2/slider2.phtml"/>
+        </reference>
+    </testmi2_index_slider2>
+
+    <!-- ASV: from rwd_my/catalog.xml -->
+    <testmi2_index_default>
+        <!-- ASV: adding theme carousel -->
+        <reference name="root">
+            <!-- define the default template for the theme -->
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+
+            <!-- define the block slider -->
+            <block type="core/text_list" name="slider" as="slider" translate="label">
+                <label>Slider Block</label>
+            </block>
+        </reference>
+
+        <reference name="head">
+        <!-- Adding Javascripts -->
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/carouFredSel-6.2.1/jquery.carouFredSel-6.2.1-packed.js</name>
+        </action>
+        </reference>
+
+        <!-- asv: Adding custom.css [Theme book]  -->
+        <reference name="head">
+            <!--            <action method="addItem">
+                            <type>skin_js</type>
+                            <name>js/jquery.prettyPhoto.js</name>
+                        </action>-->
+            <!-- ASV: Adding custom.css -->
+            <action method="addCss">
+                <stylesheet>css/custom.css</stylesheet>
+            </action>
+        </reference>
+
+        <!-- ASV: passing parameters from layout to template (task #7) -->
+        <reference name="content">
+            <!--<block name="siteblocks.list" as="siteblocks" type="siteblocks/list" template="siteblocks/list.phtml"/>-->
+            <block name="testmi.index" as="testmi" type="testmi/index" template="testmi/index.phtml">
+                <action method="setData">
+                    <name>category_id</name>
+                    <value>6</value>
+                    <name>amount</name>
+                    <value>3</value>
+                </action>
+            </block>
+
+            <!-- ASV: inserting static block -->
+<!--            <block type="cms/block" name="cms_static_block">
+                <action method="setBlockId">
+                    <block_id>block_2</block_id>
+                </action>
+            </block>-->
+
+        </reference>
+    </testmi2_index_default>
+</layout>   
+	

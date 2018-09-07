@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <!-- ASV: passing parameters from layout to template (task #7) -->
+        <reference name="content">
+        <!--<block name="siteblocks.list" as="siteblocks" type="siteblocks/list" template="siteblocks/list.phtml"/>-->
+        <!--<block name="testmi_index" as="testmi" type="testmi/index" template="testmi/index.phtml">
+            <action method="setData">
+                <name>category_id</name>
+                <value>6</value>
+                <name>amount</name>
+                <value>3</value>
+            </action>
+        </block>-->
+    </default>
+
+
+    <testmi_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+<!--            <block type="testmi/index" name="testmi_index" template="testmi/index.phtml">
+            <action method="setData">
+                <name>category_id</name>
+                <value>6</value>
+                <name>amount</name>
+                <value>3</value>
+            </action>
+            </block>-->
+        </reference>
+    </testmi_index_index>
+
+    <testmi_index_simple>
+        <reference name="content">
+            <block type="testmi/index" name="testmi_simple" template="testmi/slider1.phtml">
+            </block>
+        </reference>
+    </testmi_index_simple>
+
+    <!-- ASV: Doesn't work??????????????? index.phtml instead of slider.phtml -->
+    <testmi_index_slider1>
+        <reference name="content">
+            <block type="testmi/index" name="testmi_slider1" template="testmi/slider1.phtml">
+            </block>
+        </reference>
+    </testmi_index_slider1>
+
+    <testmi_index_view>
+        <reference name="content">
+            <block type="testmi/index" name="testmi_index" template="testmi/slider.phtml">
+            </block>
+        </reference>
+    </testmi_index_view>
+</layout>   
+	

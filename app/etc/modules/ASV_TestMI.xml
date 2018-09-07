@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <ASV_TestMI>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </ASV_TestMI>
+  </modules>
+</config>

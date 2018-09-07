@@ -1,0 +1,54 @@
+Demo Page TestMI
+
+<h1>Parameters to a block (msg: index.phtml)</h1>
+<?php
+/*    $product_id = 10;
+    $this->getChild('list')->setData("categroyId", $category_id);
+    echo $this->getChildHtml('siteblocks.list', false);*/
+?>
+
+<div>
+    <?php echo 'Current Frontend Package: ' . Mage::getSingleton('core/design_package')->getPackageName() . '<br />' ?>
+    <?php echo 'Current Frontend Theme: ' . Mage::getSingleton('core/design_package')->getTheme('skin') . '<br />' ?>
+</div>
+
+<h1>index.phtml with block (msg: list.phtml)</h1>
+<?php foreach($this->getProductsByParameters() as $block):
+//$block = $this->getData('product_id');
+//die('list = ' . $block);
+//var_dump($block);
+    ?>
+    <div class="testmi">
+        <!--<div class="block-title"><?php /*echo $block->getTitle()*/?></div>
+        <div class="block-content"><?php /*echo $block->getContent()*/?></div>-->
+
+        <div class="block-title"><?php echo $block->getId()?></div>
+        <div class="block-content"><?php echo $block->getName()?></div>
+
+        <!-- ASV: trying to insert image -->
+        <div class="block-item">
+            <a href="<?php echo $block->getProductUrl() ?>"
+               title="<?php echo $this->stripTags($this->getImageLabel($block, 'small_image'), null, true) ?>"
+               class="block-image">
+                <img src="<?php echo $this->helper('catalog/image')->init($block, 'small_image')->resize(250); ?>"
+                     width="210" height="210"
+                     alt="<?php echo $this->stripTags($this->getImageLabel($block, 'small_image'), null, true) ?>"/>
+            </a>
+            <!--            <div class="slider-item-content">
+                <p>
+                    <?php /*echo $_product->getName() */?>
+                </p>
+                <?php /*echo $this->getPriceHtml($_product) */?>
+            </div>-->
+        </div>
+        <!-- /ASV: trying to insert image -->
+    </div>
+
+    <!--    <div class="siteblock">
+            //echo $this->getLayout()->createBlock('cms/block')->setBlockId('block-1')->toHtml();
+            echo $this->getLayout()->createBlock('siteblocks/list')->setBlockId('block-1')->toHtml();
+        </div>-->
+
+<?php endforeach;?>
+
+<h1>list.phtml with block</h1>
